@@ -1,0 +1,69 @@
+%\documentclass[10pt]{article}
+%\usepackage{pgf,tikz}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+ 
+%<<<<<<<WARNING>>>>>>>
+% PGF/Tikz doesn't support the following mathematical functions:
+% tan, cosh, acosh, sinh, asinh, tanh, atanh
+
+% Plotting will be done using GNUPLOT
+% GNUPLOT must be installed and you must allow Latex to call external programs by
+% Adding the following option to your compiler
+% shell-escape    OR    enable-write18 
+% Example: pdflatex --shell-escape file.tex 
+
+\begin{document}
+\definecolor{ttfftt}{rgb}{0.2,1,0.2}
+\definecolor{zzttqq}{rgb}{0.6,0.2,0}
+\definecolor{ffttww}{rgb}{1,0.2,0.4}
+\definecolor{ttqqff}{rgb}{0.2,0,1}
+\definecolor{qqqqff}{rgb}{0,0,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw[->,color=black] (-4.3,0) -- (18.7,0);
+\foreach \x in {-4,-3,-2,-1,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0,-12.24) -- (0,6.3);
+\foreach \y in {-12,-11,-10,-9,-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\clip(-4.3,-12.24) rectangle (18.7,6.3);
+\fill[color=ffttww,fill=ffttww,fill opacity=0.1] (9.4,4.18) -- (12.3,-1.54) -- (7.94,-2.44) -- cycle;
+\fill[color=ttfftt,fill=ttfftt,fill opacity=0.1] (6.32,3.25) -- (7.77,0.39) -- (5.59,-0.06) -- cycle;
+\draw [color=ttqqff] (2.15,2) circle (2.94cm);
+\draw [color=ffttww] (9.4,4.18)-- (12.3,-1.54);
+\draw [color=ffttww] (12.3,-1.54)-- (7.94,-2.44);
+\draw [color=ffttww] (7.94,-2.44)-- (9.4,4.18);
+\draw[color=zzttqq,fill=zzttqq,fill opacity=0.1, smooth,samples=100,domain=0.0:3.0] plot[parametric] function{8.62/((9.4+1.45*abs(t)-3.63*abs(t-1)+2.91*abs(t-2)+t*0.73-4.34)**2+(4.18-2.86*abs(t)+2.41*abs(t-1)+3.76*abs(t-2)+t*3.31-11.93)**2)*(9.4+1.45*abs(t)-3.63*abs(t-1)+2.91*abs(t-2)+t*0.73-4.34)+2.15,8.62/((9.4+1.45*abs(t)-3.63*abs(t-1)+2.91*abs(t-2)+t*0.73-4.34)**2+(4.18-2.86*abs(t)+2.41*abs(t-1)+3.76*abs(t-2)+t*3.31-11.93)**2)*(4.18-2.86*abs(t)+2.41*abs(t-1)+3.76*abs(t-2)+t*3.31-11.93)+2};
+\draw [color=ttfftt] (6.32,3.25)-- (7.77,0.39);
+\draw [color=ttfftt] (7.77,0.39)-- (5.59,-0.06);
+\draw [color=ttfftt] (5.59,-0.06)-- (6.32,3.25);
+\draw [dash pattern=on 5pt off 5pt,domain=-4.3:18.7] plot(\x,{(--4.17--0.93*\x)/3.08});
+\draw [dash pattern=on 5pt off 5pt,domain=-4.3:18.7] plot(\x,{(--16.81-1.93*\x)/4.53});
+\draw [dash pattern=on 5pt off 5pt,domain=-4.3:18.7] plot(\x,{(--26.39-4.77*\x)/4.7});
+\begin{scriptsize}
+\fill [color=qqqqff] (0,0) circle (1.5pt);
+\draw[color=qqqqff] (0.16,0.26) node {$A$};
+\fill [color=qqqqff] (5.06,1.62) circle (1.5pt);
+\draw[color=qqqqff] (5.22,1.88) node {$B$};
+\fill [color=qqqqff] (0,4) circle (1.5pt);
+\draw[color=qqqqff] (0.16,4.26) node {$C$};
+\fill [color=qqqqff] (9.4,4.18) circle (1.5pt);
+\draw[color=qqqqff] (9.56,4.44) node {$D$};
+\fill [color=qqqqff] (3.24,2.33) circle (1.5pt);
+\draw[color=qqqqff] (3.44,2.58) node {$D'$};
+\fill [color=qqqqff] (12.3,-1.54) circle (1.5pt);
+\draw[color=qqqqff] (12.46,-1.28) node {$E$};
+\fill [color=qqqqff] (7.94,-2.44) circle (1.5pt);
+\draw[color=qqqqff] (8.08,-2.18) node {$F$};
+\fill [color=qqqqff] (6.32,3.25) circle (1.5pt);
+\draw[color=qqqqff] (6.66,3.52) node {$D'_1$};
+\fill [color=qqqqff] (6.32,3.25) circle (1.5pt);
+\draw[color=qqqqff] (6.66,3.52) node {$D'_2$};
+\fill [color=qqqqff] (7.77,0.39) circle (1.5pt);
+\draw[color=qqqqff] (7.94,0.66) node {$E'$};
+\fill [color=qqqqff] (5.59,-0.06) circle (1.5pt);
+\draw[color=qqqqff] (5.76,0.2) node {$F'$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{document}
