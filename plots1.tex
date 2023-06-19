@@ -32,28 +32,31 @@ con condición inicial $x(0)=X_0$.
 
  En la figura \ref{g1} podemos ver una solución para el crecimiento Malthusiano...
 
- \pgfplotsset{width=\textwidth,compat=1.9}
+ %\pgfplotsset{width=\textwidth,compat=1.9}
 
  \begin{figure}[h!]
      \centering
      \begin{tikzpicture}
-         \begin{axis}[title={\bf Crecimiento Malthusiano},xlabel={\bf $t$},ylabel={\bf $X_0\rm{e}^{\kappa t}$},xmin=0,ymax=1.8]
-             \addplot[color=blue]{0.5*exp(0.2*x)};
+         \begin{axis}[title={\bf Crecimiento Malthusiano},xlabel={\bf $t$},ylabel={\bf $X_0\rm{e}^{\kappa t}$},xmin=0,ymax=25]
+             \addplot[color=blue, domain = 0:25, samples=100 ]{0.5*exp(0.2*x)};
          \end{axis}
      \end{tikzpicture}
      \caption{Grafica Malthus pgfplots}
      \label{g3}
  \end{figure}
 
- \begin{figure}[h!]
+ \begin{figure}[h]
     \centering
+    
     \begin{tikzpicture}
-\begin{axis}[title={\bf Crecimiento Malthusiano},xlabel={\bf $t$},ylabel={\bf $x_0e^{\alpha t}$}]
-\addplot[color=red]{0.1*exp(0.4*x)};\addlegendentry{$x_0=0.1$}
-\addplot[color=blue]{0.2*exp(0.4*x)};\addlegendentry{$x_0=0.2$}
-\addplot[color=green]{0.4*exp(0.4*x)};\addlegendentry{$x_0=0.4$}
-\addplot[color=purple]{0.6*exp(0.4*x)};\addlegendentry{$x_0=0.6$}
-\addplot[color=black]{0.8*exp(0.4*x)};\addlegendentry{$x_0=0.8$}
+\begin{axis}[title={\bf Crecimiento Malthusiano},xlabel={\bf $t$},ylabel={\bf $x_0e^{\alpha t}$},xmin=0,ymax=25]
+
+\addplot[color=red, domain = 0:25, samples=100]{0.1*exp(0.4*x)};
+\addlegendentry{$x_0=0.1$}
+\addplot[color=blue, domain = 0:25, samples=100]{0.2*exp(0.4*x)};\addlegendentry{$x_0=0.2$}
+\addplot[color=green, domain = 0:25, samples=100]{0.4*exp(0.4*x)};\addlegendentry{$x_0=0.4$}
+\addplot[color=purple, domain = 0:25, samples=100]{0.6*exp(0.4*x)};\addlegendentry{$x_0=0.6$}
+\addplot[color=black, domain = 0:25, samples=100]{0.8*exp(0.4*x)};\addlegendentry{$x_0=0.8$}
 \end{axis}
 \end{tikzpicture}
     \caption{Gráfica para varias condiciones iniciales y $\kappa = 0.4$}
