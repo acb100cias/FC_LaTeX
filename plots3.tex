@@ -38,7 +38,7 @@
         \begin{axis}
             [view={120}{30}]
             % parte baja del cilindro
-            \addplot3[surf,z buffer=sort,samples=30,variable=\u,variable y=\v,domain=0:360,y domain=0:3]
+            \addplot3[colormap/viridis,surf,z buffer=sort,samples=30,variable=\u,variable y=\v,domain=0:360,y domain=0:3]
             ({cos(u)},{sin(u)},{min(2-y,v)});
             %plano
             \addplot3[surf, z buffer= sort,samples=30,variable=\u,variable y=\v,domain=-2:2,y domain=-2:2]({u},{v},{2-v});
@@ -47,7 +47,7 @@
             ({cos(u)},{sin(u)},{2-sin(u)});
 
             %parte alta cilindro
-            \addplot3[ surf,z buffer=sort,samples=30,variable=\u,variable y=\v,domain=0:360,y domain=0:4]
+            \addplot3[ colormap/viridis,surf,z buffer=sort,samples=30,variable=\u,variable y=\v,domain=0:360,y domain=0:4]
             ({cos(u)},{sin(u)},{max(2-y,v)});
     
         \end{axis}
