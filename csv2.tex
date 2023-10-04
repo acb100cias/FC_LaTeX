@@ -1,0 +1,6 @@
+\documentclass{article}
+\usepackage{csvsimple}
+\begin{document}
+\csvreader[tabular=|c|c|c|c|,table head=\hline & Enfermedad & Pat\'ogeno & Tipo \\\hline,late after line=\\\hline]{data.csv}{enfermedad=\enfermedad,patogeno=\patogeno,tipo=\tipo}
+{\thecsvrow & \enfermedad & \patogeno & \tipo}
+\end{document}
