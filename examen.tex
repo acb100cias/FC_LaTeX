@@ -1,8 +1,17 @@
-\documentclass{exam}
+\documentclass[addpoints]{exam}
 \usepackage[spanish]{babel}
+\pointpoints{punto}{puntos}
+\bonuspointpoints{punto extra}{puntos extra}
+\totalformat{Pregunta \thequestion: \totalpoints puntos }
+\chqword{Pregunta}
+\chqword{Página}
+\chqword{Puntos}
+\chqword{Puntos extra}
+\chqword{ Puntos obtenidos}
+\chqword{Total}
 \usepackage[utf8x]{inputenc}
 \usepackage{amsthm,amsmath,amssymb}
-
+\decimalpoint
 \begin{document}
 \begin{center}
     \fbox{\fbox{\parbox{10cm}{\centering Contesta cuatro preguntas, en los espacios, debajo de ellas}}}
@@ -18,9 +27,9 @@
 \makebox[0.75\textwidth]{Profesor:\enspace\hrulefill}
 
 \begin{questions}
-    \question Pruebe que si $\delta$ es una norma en un espacio vectorial $V$, entonces induce una métrica.
+    \question[3 \half] Pruebe que si $\delta$ es una norma en un espacio vectorial $V$, entonces induce una métrica.
     \vspace{\stretch{1}}
-    \question Pruebe que una métrica induce una topología.
+    \question [3 \half] Pruebe que una métrica induce una topología.
     \vspace{\stretch{1}}
     \question Considera el problema de valores iniciales
     $$
@@ -28,9 +37,9 @@
     $$
     con la condición inicial $x_0=K+0.2$. Contesta
     \begin{parts}
-        \part Encuentra las posibles soluciones estacionarias.
+        \part[1] Encuentra las posibles soluciones estacionarias.
         \vspace{\stretch{1}}
-        \part ¿Cuál es la estabilidad de  tales soluciones?
+        \part[1] ¿Cuál es la estabilidad de  tales soluciones?
         \begin{subparts}
         \subpart Da una interpretación biológica
         \vspace{\stretch{1}}
@@ -38,11 +47,35 @@
         \vspace{\stretch{1}}
         \end{subparts}
         \vspace{\stretch{1}}
-        \part Esboza las soluciones
+        \part[1] Esboza las soluciones
         \vspace{\stretch{1}}
     \end{parts}
 %\vspace{\stretch{1}}
+\droptotalpoints
+\bonusquestion[1] ¿Cúal de los siguientes inventó la simetría?
+
+\begin{oneparchoices}
+    \choice Emmy Noether
+    \choice Sophus Lie
+    \choice Felix Klein
+    \choice Esta pregunta carece de sentido    
+\end{oneparchoices}
+
+\bonusquestion[1] ¿Cúales de los siguientes conceptos pertenece a la teoría delos sistemas complejos?
+
+\begin{checkboxes}
+    \choice Criticalidad
+    \choice Auto-organización
+    \choice Emergencia
+    \choice Singularidad
+    \choice Excitabilidad
+\end{checkboxes}
+
 \end{questions}
+
+\begin{center}
+    \combinedgradetable[h][questions]
+\end{center}
 \clearpage
 
 \end{document}
